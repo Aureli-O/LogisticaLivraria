@@ -11,6 +11,7 @@ namespace Livraria
     {
         //ATRIBUTOS DO OBJ
         string Nome;
+        string Autor;
         string Categoria;
         float Preco;
         int QuantPags;
@@ -33,6 +34,15 @@ namespace Livraria
         public string getNome()
         {
             return Nome;
+        }
+        //AUTOR
+        public void setAutor(string Autor)
+        {
+            this.Autor = Autor;
+        }
+        public string getAutor()
+        {
+            return Autor;
         }
         //CATEGORIA
         public void setCategoria(string Categoria)
@@ -84,7 +94,8 @@ namespace Livraria
                     "=============================\n" +
                     "Nome: " + Nome + "\n" +
                     "Categoria: " + Categoria + "\n" +
-                    "Preço: " + Preco.ToString() + "\n" +
+                    "Autor(a): " + Autor + "\n" +
+                    "Preço: R$ " + Preco.ToString() + "\n" +
                     "Quantidade de Páginas: " + QuantPags.ToString() + "\n" +
                     "Quantidade: " + QuantEmEstoque.ToString() + "\n" +
                     "Valor Total em Estoque: " + CalcularValorTotalEmEstoque() + "\n" +
@@ -105,17 +116,26 @@ namespace Livraria
             //DECLARANDO NOVAS INFOS NO PRODUTO
             Console.Write("Digite o nome do produto: ");
             string n = Console.ReadLine();
+
             Console.Write("Digite a categoria do produto: ");
             string cat = Console.ReadLine();
+
+            Console.Write("Digite o nome do(a) autor(a): ");
+            string aut = Console.ReadLine();
+
             Console.Write("Digite o preço do produto: ");
             float preco = float.Parse(Console.ReadLine(), adq);
+
             Console.Write("Digite o quantidade de páginas: ");
             int qtdP = Convert.ToInt32(Console.ReadLine());
+
             Console.Write("Digite o quantidade do produto: ");
             int qtd = Convert.ToInt32(Console.ReadLine());
+
             //REDECLARANDO 
             p.setNome(n);
             p.setPreco(preco);
+            p.setAutor(aut);
             p.setQuantidadeDePaginas(qtdP);
             p.setQuantidadeEmEstoque(qtd);
             p.setCategoria(cat);
